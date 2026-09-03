@@ -2,8 +2,7 @@
 
 **Autor(a):** Evelyn Soares
 **Disciplina:** Engenharia de Software (ES2026)
-**Base prática:** Homework 1 — Ruby Calisthenics (Partes 1 a 6; a Parte 7 foi
-removida do enunciado e adiada para o Homework 2)
+**Base prática:** Homework 1 — Ruby Calisthenics
 **LLM usada:** Claude (via Claude Code), modelo Sonnet 5, Anthropic
 
 ## Tema
