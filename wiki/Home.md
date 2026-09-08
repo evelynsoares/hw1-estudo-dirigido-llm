@@ -1,6 +1,7 @@
 # Estudo dirigido: como LLM pode promover o aprendizado e o desenvolvimento de aplicações Ruby?
 
-**Autor(a):** Evelyn Soares
+**Autora:** Evelyn Soares
+**Matrícula:** 170102785
 **Disciplina:** Engenharia de Software (ES2026)
 **Base prática:** Homework 1 — Ruby Calisthenics
 **LLM usada:** Claude (via Claude Code), modelo Sonnet 5, Anthropic
