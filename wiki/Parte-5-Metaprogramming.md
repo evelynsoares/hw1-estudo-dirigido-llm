@@ -60,6 +60,27 @@ Esse é o exercício mais avançado do HW1 e vale destrinchar em partes:
    `@bar_history`, porque *instance variables* pertencem ao objeto, não à
    classe — duas instâncias de `Foo` nunca compartilham histórico.
 
+## Como usei o Claude Code para entender Ruby
+
+Esta foi a parte em que mais precisei de explicações graduais. Em Python e
+C++, eu normalmente declararia os métodos antes de criar os objetos. Em Ruby,
+`attr_accessor_with_history` modifica a própria classe e gera métodos em
+tempo de execução. Pedi ao Claude Code para explicar o processo em três
+níveis: comparar `attr_accessor` com getters e setters manuais; isolar
+`class_eval` e `#{attr_name}`; e comparar a solução com uma versão sem
+metaprogramação.
+
+Essa comparação mostrou que `attr_accessor` é um método que recebe um símbolo,
+e não uma palavra reservada equivalente a `property`. Também mostrou que a
+interpolação monta o nome do método, como `bar=`, antes de o Ruby avaliar o
+código dentro da classe. Em Python, a ideia se aproxima de `setattr` ou de um
+descritor; em C++, a geração dinâmica de métodos não faz parte do modelo usual
+da linguagem.
+
+Os testes de duas instâncias e de dois atributos na mesma classe confirmaram
+que o histórico fica em variáveis de instância e não em uma variável
+compartilhada pela classe.
+
 ## Estruturas Ruby usadas
 
 - *Open classes* (reabrir `Class`) — mecanismo que permite ao Ruby, ao
@@ -76,4 +97,4 @@ Esse é o exercício mais avançado do HW1 e vale destrinchar em partes:
 Comparação com a mesma funcionalidade **sem metaprogramming** (getter/setter
 escritos na mão, sem `class_eval`) em
 [Implementações alternativas](Implementacoes-Alternativas) e no código-fonte
-[`alternativas/part5_sem_metaprogramming.rb`](https://github.com/<usuario>/<repo>/blob/main/alternativas/part5_sem_metaprogramming.rb).
+[`alternativas/part5_sem_metaprogramming.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part5_sem_metaprogramming.rb).

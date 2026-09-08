@@ -62,6 +62,28 @@ adicionar a regra especial do sabor licorice preta — e essa sobrescrita
 não quebra o contrato: continua devolvendo `true` pra todos os outros casos
 (inclusive `Dessert` puro, que nem conhece o conceito de sabor).
 
+## Como usei o Claude Code para entender Ruby
+
+Eu pedi ao Claude Code para comparar a classe Ruby com uma implementação
+equivalente em Python e C++, porque a sintaxe de atributos e construtores é
+bem diferente:
+
+- `attr_accessor :name, :calories` gera métodos de leitura e escrita. Em
+  Python, a ideia se aproxima de uma `property`; em C++, seria necessário
+  declarar os atributos e escrever getters e setters.
+- `@name` e `@calories` são variáveis de instância. Sem o `@`, `name` dentro
+  de um método significa chamada de método, não acesso direto ao campo.
+- `class JellyBean < Dessert` expressa herança diretamente no cabeçalho. A
+  subclasse usa `super(name, calories)` para chamar o construtor da classe
+  pai; pedi exemplos com e sem `super` para observar a duplicação causada pela
+  alternativa manual.
+- O ponto de interrogação em `healthy?` e `delicious?` faz parte do nome do
+  método e segue a convenção Ruby para métodos que retornam booleano.
+
+Depois da explicação, alterei atributos nos testes e comparei o comportamento
+de `Dessert` com o de `JellyBean`. Isso confirmou a herança de `healthy?` e a
+sobrescrita de `delicious?`.
+
 ## Estruturas Ruby usadas
 
 - `attr_accessor` — geração automática de getter/setter.

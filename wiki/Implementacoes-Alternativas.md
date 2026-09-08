@@ -4,7 +4,7 @@
 
 Pra cada dimensão pedida no enunciado, foi implementada uma alternativa real
 (rodável e testada, não só um esboço) ao lado da solução original, em
-[`alternativas/`](https://github.com/<usuario>/<repo>/tree/main/alternativas).
+[`alternativas/`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/tree/main/alternativas).
 As quatro comparações abaixo foram todas exploradas **em conversa com o
 LLM**: pedi pra ele reescrever cada solução no estilo oposto e explicar o
 porquê das diferenças — é justamente esse tipo de "e se eu tivesse feito de

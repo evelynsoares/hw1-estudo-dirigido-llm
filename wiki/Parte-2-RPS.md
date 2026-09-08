@@ -69,6 +69,31 @@ si mesma de novo nessa lista até sobrar um único vencedor — isso cobre
 profundidade arbitrária sem precisar saber de antemão quantos "rounds"
 existem.
 
+## Como usei o Claude Code para entender Ruby
+
+Nesta parte, a dificuldade foi perceber que Ruby trata arrays aninhados,
+blocos e exceções de uma forma mais compacta do que Python e C++. Eu pedi ao
+Claude Code para reescrever cada trecho em uma forma mais explícita e fazer a
+tradução conceitual:
+
+- `player1, player2 = game` é *destructuring assignment*. Em Python há uma
+  ideia equivalente; em C++ normalmente seria necessário acessar posições do
+  vetor ou usar uma estrutura própria.
+- `game.map { |sub_tournament| ... }` combina iteração e transformação. Em
+  Python se aproxima de uma list comprehension; em C++ se aproxima de
+  `std::transform`, mas Ruby passa o bloco diretamente ao método.
+- `raise ... unless condicao` é uma forma idiomática de validação. Pedi a
+  versão com `if` para entender que `unless` significa "se a condição não for
+  verdadeira".
+- `class WrongNumberOfPlayersError < StandardError; end` cria uma exceção
+  própria por herança. Isso corresponde a criar uma classe de exceção em
+  Python ou uma classe derivada de `std::exception` em C++.
+
+Também investiguei por que a recursão termina: `leaf_game?` é o caso-base;
+cada chamada resolve subtorneios menores; e a lista de vencedores vira um
+novo jogo. Validei a explicação com um torneio de um jogo, um empate e
+entradas que levantam as duas exceções.
+
 ## Estruturas Ruby usadas
 
 - `Hash` congelado (`.freeze`) como tabela de regras — evita `if/elsif`

@@ -10,6 +10,23 @@
 > explícito que o relatório é individual e sem plágio. Preencha com sua
 > experiência real antes de publicar/entregar.
 
+## Como o Claude Code participou do estudo
+
+O Claude Code foi usado principalmente como tutor de sintaxe e parceiro de
+investigação. Como eu já tinha experiência com Python e C++, eu pedia que cada
+construção nova fosse traduzida para uma ideia conhecida nessas linguagens e,
+em seguida, solicitava um exemplo mínimo em Ruby. Esse procedimento foi usado
+para entender encadeamento de métodos, blocos, `Hash`, `map`, `group_by`,
+`attr_accessor`, `super`, exceções, `class_eval`, `method_missing`, mixins e
+`yield`.
+
+A resposta do LLM não era considerada suficiente por si só. Eu conferia o
+significado no código, executava os exemplos, criava casos normais e inválidos
+e comparava a implementação original com uma alternativa. Assim, o esforço
+incluiu tanto a escrita quanto a análise crítica e a transformação da
+explicação em entendimento próprio. Os tempos abaixo devem ser preenchidos
+com as durações realmente observadas durante o desenvolvimento.
+
 ## Tempo para entender cada parte
 
 Quanto tempo levou pra entender o que cada parte pedia (ler o enunciado,

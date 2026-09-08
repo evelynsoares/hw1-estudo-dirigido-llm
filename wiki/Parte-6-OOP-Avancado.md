@@ -81,6 +81,28 @@ individuais, só a ordem da coleção como um todo. Funciona sem erro em
 pares `[chave, valor]` — raramente será igual ao seu reverse, mas nunca
 lança exceção.
 
+## Como usei o Claude Code para entender Ruby
+
+Eu pedi ao Claude Code para explicar esta parte comparando mecanismos que não
+aparecem juntos com tanta frequência em Python ou C++:
+
+- `method_missing` intercepta uma chamada que não foi definida. Assim,
+  `5.dollars` pode ser interpretado a partir do nome do método. Em Python, a
+  ideia mais próxima envolve `__getattr__`; em C++, seria necessário outro
+  mecanismo, porque chamadas arbitrárias não são normalmente resolvidas assim.
+- `respond_to_missing?` foi estudado junto com `method_missing`, porque uma
+  classe que responde dinamicamente também deve informar corretamente
+  `respond_to?`.
+- `module Enumerable` funciona como um *mixin*. Em vez de copiar
+  `palindrome?` para `Array`, `Range` e `Hash`, o método é disponibilizado às
+  classes que incluem o módulo. Comparei isso com classes auxiliares em C++ e
+  com um método comum que recebe a coleção em Python.
+
+Também pedi a diferença entre `to_a == to_a.reverse` e uma iteração manual com
+`yield`. O primeiro usa operações prontas; o segundo torna visível o protocolo
+de iteração. Os testes de `Array`, `Range`, `Hash` e moeda inválida conferiram
+o comportamento real e a preservação do `NoMethodError`.
+
 ## Estruturas Ruby usadas
 
 - `method_missing` / `respond_to_missing?` — *duck typing* dinâmico,
@@ -99,4 +121,4 @@ lança exceção.
 Comparação de `palindrome?` **com/sem mixin** e **com/sem `yield`
 explícito** em [Implementações alternativas](Implementacoes-Alternativas) e
 no código-fonte
-[`alternativas/part6_yield_sem_mixin.rb`](https://github.com/<usuario>/<repo>/blob/main/alternativas/part6_yield_sem_mixin.rb).
+[`alternativas/part6_yield_sem_mixin.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part6_yield_sem_mixin.rb).

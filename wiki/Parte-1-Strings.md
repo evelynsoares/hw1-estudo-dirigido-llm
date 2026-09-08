@@ -119,4 +119,4 @@ saber o vocabulário próprio de Ruby.
 
 Comparação com uma versão **imperativa** (com `while`, sem regex) em
 [Implementações alternativas](Implementacoes-Alternativas) e no código-fonte
-[`alternativas/part1_imperativo.rb`](https://github.com/<usuario>/<repo>/blob/main/alternativas/part1_imperativo.rb).
+[`alternativas/part1_imperativo.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part1_imperativo.rb).
