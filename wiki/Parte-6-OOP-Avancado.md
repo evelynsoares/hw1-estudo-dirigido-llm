@@ -122,3 +122,7 @@ Comparação de `palindrome?` **com/sem mixin** e **com/sem `yield`
 explícito** em [Implementações alternativas](Implementacoes-Alternativas) e
 no código-fonte
 [`alternativas/part6_yield_sem_mixin.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part6_yield_sem_mixin.rb).
+
+A conversão com `method_missing` também pode ser substituída por uma função
+explícita em
+[`alternativas/part6_explicit_currency.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part6_explicit_currency.rb).

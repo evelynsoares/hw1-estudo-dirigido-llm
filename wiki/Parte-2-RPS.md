@@ -102,3 +102,9 @@ entradas que levantam as duas exceções.
 - Recursão sobre estrutura de dados aninhada (árvore implícita no array),
   com `Enumerable#map` pra resolver "irmãos" no mesmo nível antes de subir
   um nível.
+
+## Ver também
+
+Comparação entre a tabela de regras com `Hash` e regras escritas com `case` em
+[Implementações alternativas](Implementacoes-Alternativas) e no código-fonte
+[`alternativas/part2_case.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part2_case.rb).

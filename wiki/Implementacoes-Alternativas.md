@@ -2,10 +2,10 @@
 
 [← Home](Home)
 
-Pra cada dimensão pedida no enunciado, foi implementada uma alternativa real
-(rodável e testada, não só um esboço) ao lado da solução original, em
+Para cada dimensão pedida no enunciado, foi implementada uma alternativa real
+(executável e testada, não só um esboço) ao lado da solução original, em
 [`alternativas/`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/tree/main/alternativas).
-As quatro comparações abaixo foram todas exploradas **em conversa com o
+As sete comparações abaixo foram todas exploradas **em conversa com o
 LLM**: pedi pra ele reescrever cada solução no estilo oposto e explicar o
 porquê das diferenças — é justamente esse tipo de "e se eu tivesse feito de
 outro jeito?" que fica muito mais barato de explorar com um LLM do que sem.
@@ -46,10 +46,38 @@ outro jeito?" que fica muito mais barato de explorar com um LLM do que sem.
 | Performance | `reverse` nativo, otimizado em C | Reimplementa a roda — mais lento, mais superfície pra bug (índice `i`) |
 | Quando vale a pena | Uso "de produção" | Contexto de estudo/entendimento de iteradores |
 
+## 5. `Hash` × `case` explícito (Parte 2)
+
+| | Tabela `Hash` (original) | `case` (`alternativas/part2_case.rb`) |
+|---|---|---|
+| Regras | Mapeia cada jogada para o que ela vence | Expõe cada regra dentro de um condicional |
+| Legibilidade | Curto e fácil de estender com novas regras | Mais direto para quem está aprendendo condicionais |
+| Manutenção | Menos repetição e menor risco de esquecer uma combinação | Pode crescer e duplicar lógica conforme as regras aumentam |
+| Melhor uso | Regras estáveis representadas por dados | Estudo da lógica ou regras muito específicas |
+
+## 6. `attr_accessor` × accessors manuais (Parte 4)
+
+| | `attr_accessor` (original) | Accessors manuais (`alternativas/part4_manual_accessors.rb`) |
+|---|---|---|
+| Código | Gera getter e setter automaticamente | Declara cada método explicitamente |
+| Vantagem | Reduz repetição e deixa a intenção clara | Mostra exatamente como leitura e escrita funcionam |
+| Desvantagem | Esconde métodos gerados de quem está começando em Ruby | Mais linhas e maior chance de erro ou inconsistência |
+| Melhor uso | Atributos simples | Quando o getter/setter precisa de validação ou comportamento próprio |
+
+## 7. Conversão dinâmica × função explícita (Parte 6a)
+
+| | `method_missing` (original) | Função explícita (`alternativas/part6_explicit_currency.rb`) |
+|---|---|---|
+| Uso | `5.dollars.in(:euros)` | `convert_currency(5, :dollars, :euros)` |
+| Descoberta | Sintaxe expressiva, mas comportamento implícito | Função visível e fácil de localizar |
+| Risco | Pode esconder erros e exige `respond_to_missing?` | Mais verboso, porém mais previsível |
+| Melhor uso | APIs internas expressivas e didáticas | Código simples, manutenção e ferramentas de análise |
+
 ## Conclusão geral
 
-Em todos os quatro casos, a versão "mais Ruby idiomática" (funcional, `Hash`,
-mixin, sem `yield` manual) venceu em concisão e manutenibilidade — o que
+Nas comparações, a versão "mais Ruby idiomática" (funcional, `Hash`,
+`attr_accessor`, métodos dinâmicos quando a API pede essa expressividade,
+mixin e sem `yield` manual) venceu em concisão e manutenibilidade — o que
 condiz com o espírito do "Ruby Calisthenics" do enunciado. As alternativas
 valem como material de estudo (entender o que o Ruby faz "por baixo dos
 panos"), mas não como substituição da solução original em código real.

@@ -10,7 +10,9 @@ usando as Partes 1 a 6 do Homework 1 (Ruby Calisthenics) como base prática.
   comentário explicando o raciocínio e checks de teste no final).
 - [`alternativas/`](alternativas/) — implementações alternativas usadas na
   seção de comparação do relatório (funcional x imperativo, `Hash` x
-  `Array`/`Set`, com/sem metaprogramming, com/sem mixin, com/sem `yield`).
+  `Array`/`Set`, `Hash` x `case`, `attr_accessor` x accessors manuais,
+  conversão dinâmica x função explícita, com/sem metaprogramming, com/sem
+  mixin, com/sem `yield`).
 - [`wiki/`](wiki/) — o relatório em si, já dividido em páginas prontas pra
   virar a Wiki do repositório no GitHub (ver [Publicando no GitHub
   Wiki](#publicando-no-github-wiki) abaixo).
@@ -29,9 +31,12 @@ ruby hw1/part5.rb
 ruby hw1/part6.rb
 
 ruby alternativas/part1_imperativo.rb
+ruby alternativas/part2_case.rb
 ruby alternativas/part3_outras_collections.rb
+ruby alternativas/part4_manual_accessors.rb
 ruby alternativas/part5_sem_metaprogramming.rb
 ruby alternativas/part6_yield_sem_mixin.rb
+ruby alternativas/part6_explicit_currency.rb
 ```
 
 Testado com Ruby 3.4.

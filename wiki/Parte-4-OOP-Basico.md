@@ -90,3 +90,9 @@ sobrescrita de `delicious?`.
 - Herança de classe (`class JellyBean < Dessert`) e `super` — reuso de
   `initialize` do pai sem duplicar código.
 - *Method overriding* (`delicious?` redefinido na subclasse).
+
+## Ver também
+
+Comparação entre `attr_accessor` e getters/setters manuais em
+[Implementações alternativas](Implementacoes-Alternativas) e no código-fonte
+[`alternativas/part4_manual_accessors.rb`](https://github.com/evelynsoares/hw1-estudo-dirigido-llm/blob/main/alternativas/part4_manual_accessors.rb).
