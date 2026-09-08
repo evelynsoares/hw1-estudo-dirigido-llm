@@ -38,22 +38,3 @@ ruby alternativas/part5_sem_metaprogramming.rb
 ruby alternativas/part6_yield_sem_mixin.rb
 ruby alternativas/part6_explicit_currency.rb
 ```
-
-Testado com Ruby 3.4.
-
-## Publicando no GitHub Wiki
-
-O enunciado pede a entrega como link de uma página Wiki no repositório
-GitHub. Depois que este repositório existir no GitHub (com a Wiki
-habilitada em Settings → Features → Wikis):
-
-```bash
-git clone git@github.com:<seu-usuario>/<nome-do-repo>.wiki.git
-cp wiki/*.md <nome-do-repo>.wiki/
-cd <nome-do-repo>.wiki
-git add -A
-git commit -m "Publica estudo dirigido"
-git push
-```
-
-A página `Home.md` vira a página inicial da Wiki automaticamente.
